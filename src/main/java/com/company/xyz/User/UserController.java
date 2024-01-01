@@ -47,4 +47,9 @@ public class UserController {
     public Map<String, Object> getSpecificUser(@RequestParam String username) throws IndexOutOfBoundsException {
         return this.userService.showSpecificUserDetails(username);
     }
+
+	@GetMapping("/api/v1/getAllDetails")
+	public Map<String,Object> getAllDetails(@RequestParam String username) throws IndexOutOfBoundsException {
+		return this.userService.getAllUserDetailsJsonService(username);
+	}
 }

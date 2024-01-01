@@ -56,4 +56,9 @@ public class UserDao {
         String query = "select username, email, user_avatar from users where username = (?)";
         return this.jdbcTemplate.queryForList(query, username);
     }
+
+	public List<Map<String, Object>> getUserDetailsAllJson(String username) {
+		String query = "select * from users where username = ?";
+		return this.jdbcTemplate.queryForList(query, username);
+	}
 }

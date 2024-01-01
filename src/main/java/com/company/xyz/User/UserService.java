@@ -66,4 +66,8 @@ public class UserService {
     public Map<String, Object> showSpecificUserDetails(String username) {
         return this.userDao.showSpecificUserDetails(username).get(0);
     }
+
+	public Map<String, Object> getAllUserDetailsJsonService(String username) throws IndexOutOfBoundsException {
+		return this.userDao.getUserDetailsAllJson(username).get(0);
+	}
 }
