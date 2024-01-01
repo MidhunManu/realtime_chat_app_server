@@ -57,6 +57,8 @@ public class MessageController {
 
     public Message sendPrivateMessage(@DestinationVariable String conversationId, @Payload Message message) {
         message.setCurrentTimeStamp(new Date().toInstant());
+		this.messageService.addNewMessageToDb(message);
+		System.out.println(message);
         return message;
     }
 }
